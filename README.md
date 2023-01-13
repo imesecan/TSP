@@ -26,7 +26,9 @@ which is good enough compared to a random solution.
 ## Sample run
 To run this sample solution, use tsp.m. By default, 
 tsp.m uses 100 islands and provides a sample solution.
+
 ![Random initial connection](images/initial.jpg "Initial configuration")
 ![Final connection](images/final.jpg "A sample solution") 
+
 As can be seen from the images, the total distance reduces to 
 850 unit distance from 5281 unit distance.
