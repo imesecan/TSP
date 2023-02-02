@@ -38,7 +38,7 @@ function [res Order x y] = tsp(nmx,x,y,fig)
     
 	
     % Calculate and show the initial order
-	dist2=DrawTsp(x, y, Order, cs, fig);
+	dist2 = round(DrawTsp(x, y, Order, cs, fig), 2);
     title(['Initial Total distance is ' num2str(dist2)]);
     drawnow;
     fprintf('Initial distance is %10.3f\n', dist2);
@@ -48,16 +48,13 @@ function [res Order x y] = tsp(nmx,x,y,fig)
 	t=1.0; jj=0; 
     while (t>0.001)
         jj=jj+1;
-        [dist1 Order ]= tryOnce(x,y,Order,Max,t,2000);
-        
-        dist2=DrawTsp(x, y, Order, cs, fig+1); 
+        [dist1 Order ]= tryOnce(x, y, Order, Max, t, 2500);
+        dist2 = round(DrawTsp(x, y, Order, cs, fig+1), 2);        
         title(['Run:' num2str(jj) ', Total distance is ' num2str(dist2)]);
         drawnow;
         t =t * 0.8; 
     end
     
     toc
-    res=DrawTsp(x, y, Order, cs, fig+1); 
+    res = round(DrawTsp(x, y, Order, cs, fig+1), 2);
     title(['Run:' num2str(jj) ', Total distance is ' num2str(res)]);
-
-   
